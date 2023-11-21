@@ -1,0 +1,127 @@
+<style>
+    #acceptTerms{
+        padding: 10px;
+    }
+    th, td {
+  border:none;
+  padding-left: 50px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  text-align: left;
+}
+    .ele{
+        padding: 10px;
+        display:flex;
+        justify-content: space-between;
+    }
+    input#name:invalid:focus{
+        border:1px solid red;
+    }
+    .divform{
+
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px;
+        margin-top: 50px;
+        width:300px;
+        border:none;
+        box-shadow:1.5px 1.5px 1.5px 1.5px #55555524;
+        border-radius: 5px;
+    }
+    input{
+        border: 3px ;
+        border-radius: 4px;
+        background-color:  #abbaba3b; 
+        padding: 8px;
+        box-shadow:#5555553f;
+    }
+    .tab{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width:800px;
+        box-shadow:1.5px 1.5px 1.5px 1.5px #55555524;
+    }
+    h1,h2{
+        text-align: center;
+    }
+    button{
+        background-color:rgb(49, 159, 49);
+        border-radius:3px;
+        color:white;
+        border: none;
+        padding:10px;
+    }
+</style>
+
+<div class="outer">
+<div class="divform">
+    <h1>
+        Registration Form
+    </h1>
+<form id="userform">
+    <div class="ele">
+    <label for="name">Name</label>
+    
+    <input required type="text" id="name" name="name" placeholder="Enter full Name">
+    </div>
+    <div class="ele">
+    <label for="email">Email</label>
+
+    <input type="email" id="email" name="email" placeholder="Enter email">
+    </div>
+    <div class="ele">
+    <label for="password">Password</label>
+    
+    <input type="password" id="password" name="password" placeholder="Enter Password">
+    </div>
+    <div class="ele">
+    <label for="dob">Date of Birth</label>
+    <input type="date" id="dob" name="dob" max="" min="" style="color:rgba(128, 128, 128, 0.845);">
+    </div>
+ <div>
+   
+    <label for="acceptTerms">Accept Terms & Conditions</label>
+    <input required type="checkbox" id="acceptTerms" name="acceptTerms">
+    </div>
+    <br>
+ <div>
+    
+    <button type="submit" id="submit">Submit</button>
+</div>
+ </form>
+</div>
+
+<h2>Entries</h2>
+<div class="entriesTable tab" id="user-entries">
+    
+</div>
+</div>
+
+<script>
+    function subtractYears(date, years) {
+    date.setFullYear(date.getFullYear() - years);
+  
+    return date;
+  }
+  let today=new Date();
+  const result1 = subtractYears(new Date(), 19);
+  let maxmonth=today.getMonth()+1;
+  let minmonth=today.getMonth()+1;
+  let maxdate=today.getDate();
+  let mindate=today.getDate();
+
+  
+  let maxYear=result1.getFullYear();
+  
+  const result2= subtractYears(new Date(), 56);
+
+  let minYear=result2.getFullYear();
+  let maxy=maxYear+"-"+maxmonth+"-"+maxdate;
+  let miny=minYear+"-"+minmonth+"-"+mindate;
+
+    document.getElementById("dob").setAttribute("max",maxy);
+    document.getElementById("dob").setAttribute("min",miny);
+</script>
+<script src="index.js"></script>
