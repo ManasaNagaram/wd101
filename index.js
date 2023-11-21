@@ -32,7 +32,7 @@ const displayEntries = () => {
         <th>Email </th>
         <th>Password  </th>
         <th> Dob </th>
-        <th>Accepted Terms? </th>
+        <th>Accepted Terms	&#63 </th>
     </tr>${tableEntries}</table>`;
 
     let details = document.getElementById("user-entries");
