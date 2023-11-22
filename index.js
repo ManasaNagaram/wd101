@@ -63,4 +63,4 @@ const saveUserForm = (event) => {
 
 userForm.addEventListener("submit", saveUserForm);
 displayEntries();
-localStorage.clear()
+
