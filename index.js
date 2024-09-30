@@ -58,6 +58,6 @@ userForm.addEventListener('submit',function(event){
     userEntries.push(entry);
     localStorage.setItem('userEntries',JSON.stringify(userEntries));
     displayEntries();
-    localStorage.clear();
+    
 });
 
